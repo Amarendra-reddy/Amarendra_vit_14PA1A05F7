@@ -133,6 +133,23 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		if(index<0||(index>=students.length-1))
+			try {
+				Exception IllegalArgumentException = null;
+				throw IllegalArgumentException;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		Student []std1=new Student[students.length-1];
+		int i;
+		for(i=0;i<index;i++) {
+			std1[i]=students[i];
+		}
+		for(i=index+1;i<students.length-1;i++) {
+			std1[i-1]=students[i];
+		}
+		students=std1;
 	}
 
 	@Override
@@ -163,6 +180,13 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
+		if(date==null) {
+			try {
+				throw llegalArgumentException;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
