@@ -14,7 +14,7 @@ import java.util.Date;
 public class StudentGroup implements StudentArrayOperation {
 
 	private Student[] students;
-	
+	private static final Exception llegalArgumentException = null;
 	/**
 	 * DO NOT remove or change this constructor, it will be used during task check
 	 * @param length
@@ -31,9 +31,14 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudents(Student[] students) {
-		// Add your implementation here
-			if(students==null) 
-				throw llegalArgumentException;
+			// Add your implementation here
+			if(students==null)
+				try {
+					throw llegalArgumentException;
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			else
 				this.students=students;
 	}
@@ -42,7 +47,13 @@ public class StudentGroup implements StudentArrayOperation {
 	public Student getStudent(int index) {
 		// Add your implementation here
 		if(index<0||(index>=students.length-1))
-			throw IllegalArgumentException;
+			try {
+				Exception IllegalArgumentException = null;
+				throw IllegalArgumentException;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		return students[index];
 	}
 
@@ -50,7 +61,12 @@ public class StudentGroup implements StudentArrayOperation {
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
 			if((student==null)||(index<0||(index>=students.length-1))) {
-				throw IllegalArgumentException;
+				try {
+					throw llegalArgumentException;
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		students[index]=student;
 	}
@@ -59,12 +75,16 @@ public class StudentGroup implements StudentArrayOperation {
 	public void addFirst(Student student) {
 		// Add your implementation here
 		if(student==null) {
-			throw IllegalArgumentException;
+			try {
+				throw llegalArgumentException;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		Student std1=new Student[students.length+1];
-		std1[0]=student;
+		Student []stud1=new Student[students.length+1];
+		stud1[0]=student;
 		for(int i=students.length;i>=0;i--) 
-			stud1[i]=stuents[i-1];
+			stud1[i]=students[i-1];
 		students=stud1;
 		
 	}
@@ -72,39 +92,47 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
-		if(index<0||(index>=students.length-1))
-			throw IllegalArgumentException;
-		Student std1=new Student[students.length+1];
-		students[student.length-1]=std1;
+		if(student==null)
+			try {
+				throw llegalArgumentException;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		Student []std1=new Student[students.length+1];
+		//students[students.length-1]=std1;
 		for(int i=0;i<students.length-1;i++) {
-			std1[i]=students[i]
+			std1[i]=students[i];
 		}
-		students=stud1;
+		students=std1;
 	}
 
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
 		if(student==null) {
-			throw IllegalArgumentException;
+			try {
+				throw llegalArgumentException;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		Student std1=new Student[students.length+1];
+		Student []std1=new Student[students.length+1];
 		int i;
 		for(i=0;i<students.length-1;i++) {
 			std1[i]=students[i];
 		}
-		stud1[i]=student;
+		std1[i]=student;
 		while(i<index) {
-			stud1[i+1]=students[i];
+			std1[i+1]=students[i];
 			i++;
 		}
-		students=stud1;
+		students=std1;
 	}
 
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
-		if()
 	}
 
 	@Override
