@@ -23,7 +23,6 @@ public interface StudentArrayOperation {
 	 * 
 	 * @throws IllegalArgumentException
 	 */
-
 	void setStudents(Student[] students);
 	
 
@@ -275,6 +274,5 @@ public interface StudentArrayOperation {
 	 * @throws IllegalArgumentException
 	 */
 	Student getNextStudent(Student student);
-	
-}
 
+}
